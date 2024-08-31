@@ -1,7 +1,7 @@
 from src.masks import get_mask_card_number
 
 
-def mask_account_card(new_mask_number):
+def mask_account_card(new_mask_number: str) -> str:
     """Функция которая возвращает маску и номер карты/счета"""
     if "Счет" in new_mask_number:
         return f"{new_mask_number[:5]}{'**' + new_mask_number[-4:]}"
@@ -9,6 +9,6 @@ def mask_account_card(new_mask_number):
         return get_mask_card_number(new_mask_number)
 
 
-def get_date(new_date):
+def get_date(new_date: str) -> str:
     """Функция которая возвращает дату"""
     return f"{new_date[8:10]}.{new_date[5:7]}.{new_date[:4]}"
