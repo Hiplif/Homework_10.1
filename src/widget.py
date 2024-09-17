@@ -8,7 +8,7 @@ def mask_account_card(new_mask_number: Any) -> Any:
     if "Счет" in new_mask_number:
         return f"{new_mask_number[:5]}{'**' + new_mask_number[-4:]}"
     elif "Maestro" or "MasterCard" or "Visa Classic" or "Visa Platinum" or "Visa Gold" in new_mask_number:
-        return f'{new_mask_number[:-16]}{get_mask_card_number(new_mask_number)}'
+        return f"{new_mask_number[:-16]}{get_mask_card_number(new_mask_number)}"
     else:
         return None
 
@@ -16,6 +16,6 @@ def mask_account_card(new_mask_number: Any) -> Any:
 def get_date(new_date: Any) -> Any:
     """Функция которая возвращает дату"""
     if len(new_date) == 26:
-       return f"{new_date[8:10]}.{new_date[5:7]}.{new_date[:4]}"
+        return f"{new_date[8:10]}.{new_date[5:7]}.{new_date[:4]}"
     else:
         return None

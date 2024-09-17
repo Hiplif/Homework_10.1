@@ -15,4 +15,3 @@ def get_mask_account(account_number: Any) -> Any:
         return f"{"**"}{account_number[-4:]}"
     else:
         return None
-
